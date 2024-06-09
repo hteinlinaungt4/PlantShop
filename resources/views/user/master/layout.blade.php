@@ -99,7 +99,7 @@
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="route('user.dashboard')" class="nav-brand text-white">Plant Shop</a>
+                        <a href="route('user.dashboard')" class="nav-brand text-white">Shop Plant</a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
