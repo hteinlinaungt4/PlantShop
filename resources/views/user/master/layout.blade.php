@@ -99,7 +99,7 @@
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="route('user.dashboard')" class="nav-brand text-white">Shop Plant</a>
+                        <a href="{{route('user.dashboard')}}" class="nav-brand text-white">Shop Plant</a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -114,16 +114,20 @@
                                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                             </div>
 
-                           @if (Auth::check())
+
                                 <!-- Navbar Start -->
                             <div class="classynav">
                                 <ul>
+                                    @if (Auth::check())
                                     <li><a href="{{route('user.dashboard')}}">Home</a></li>
                                     <li><a href="{{route('cart')}}">Cart({{$cartCount}})  </a></li>
                                     <li><a  href="{{route('user#orderhistory')}}">Order({{$orderCount}})</a></li>
+                                    @endif
+                                    <li><a href="{{route('user.contactpage')}}">Contact Us</a></li>
+                                    <li><a href="{{route('user.aboutus')}}">About Us</a></li>
+
                                 </ul>
                             </div>
-                           @endif
                             <!-- Navbar End -->
                         </div>
                     </nav>

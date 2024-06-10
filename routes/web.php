@@ -10,6 +10,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Admin\AjaxController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\User\DashboardController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -102,4 +103,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
     });
 });
 Route::get('user/dashboard',[UserController::class,'index'])->name('user.dashboard');
+Route::get('user/contactpage',[ContactController::class,'index'])->name('user.contactpage');
+Route::get('user/aboutus',function(){
+    return view('user.aboutus');
+})->name('user.aboutus');
+
+
 Route::get('ajax/filter',[AjaxController::class,'filter']);
