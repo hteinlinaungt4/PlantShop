@@ -99,6 +99,7 @@ class PostController extends Controller
         $validation=[
             'title' => 'required|unique:posts,title,'.$request->id,
             'content' => 'required',
+            'category' => 'required',
             'care_description' => 'required'
         ];
 

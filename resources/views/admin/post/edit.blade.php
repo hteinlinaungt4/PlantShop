@@ -46,6 +46,13 @@
                     <div class="invalid-feedback">{{$message}}</div>
                 @enderror
             </div>
+            <div class="form-group">
+                <label for="">Care Description</label>
+                <textarea name="care_description" id="" class="form-control  @error('care_description') is-invalid @enderror" rows="10" placeholder="Enter Care Description...">{{$post->care_description}}</textarea>
+                @error ('care_description')
+                    <div class="invalid-feedback">{{$message}}</div>
+                @enderror
+            </div>
             <button class="btn btn-warning float-right">Update</button>
         </form>
     </div>

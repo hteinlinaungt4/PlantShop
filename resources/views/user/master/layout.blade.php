@@ -51,14 +51,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="top-header-content d-flex align-items-center justify-content-between">
+                        <div class="top-header-content  d-flex align-items-center justify-content-between">
                             <!-- Top Header Content -->
-                            <div class="top-header-meta d-flex ml-auto">
-                                <!-- Language Dropdown -->
-
-                                <!-- Login -->
-
-
+                            <div class="top-header-meta d-flex ml-auto ">
                                     @if (!Auth::check())
 
                                     <div class="login">
@@ -72,7 +67,6 @@
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary fs-5 dropdown-toggle mr-30" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">Change Password</a>
                                                     <a class="dropdown-item" href="{{route('user.profiledetail')}}">Detail Account</a>
                                                 </div>
                                             </div>

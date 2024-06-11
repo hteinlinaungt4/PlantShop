@@ -39,7 +39,7 @@ class UserController extends Controller
 
 
     function detail($id){
-        $post=Post::where('id',$id)->first();
+        $post=Post::with('category')->where('id',$id)->first();
         $posts=Post::paginate(3);
         return view('user.detail',compact('post','posts'));
     }

@@ -4,25 +4,29 @@
 @section('content')
    <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
         <h2>Category List</h2>
         <a href="{{route('category.create')}}" class="btn btn-primary">Add Category +</a>
+      </div>
+      <div>
+        <form class="form-header float-right d-flex my-2" action="" method="get">
+            <input class="au-input au-input--sm form-control" type="text" name="search" placeholder="Search for datas &amp; reports..."  value="{{ request('search') }}"/>
+            <button class="au-btn--submit btn btn-sm btn-primary" type="submit">
+               Search
+            </button>
+        </form>
+      </div>
     </div>
     <div class="card-body">
         @if (session('success'))
             <div id="success-message" style="display: none;">{{ session('success') }}</div>
         @endif
 
-        <form class="form-header float-end" action="" method="get">
-            <input class="au-input au-input--sm" type="text" name="search" placeholder="Search for datas &amp; reports..."  value="{{ request('search') }}"/>
-            <button class="au-btn--submit" type="submit">
-               Search
-            </button>
-        </form>
+
 
         <table class="table table-striped table-hover table-bordered">
             <tr>
                 <thead>
-                    <th>ID</th>
                     <th>Name</th>
                     <th>Action</th>
                 </thead>
@@ -31,7 +35,6 @@
            @foreach ($categories as $category)
             <tr>
                 <tbody>
-                    <td>@php echo $i;$i++; @endphp</td>
                     <td>{{ $category->name }}</td>
                     <td class="d-flex">
                         <a href="{{ route('category.edit',$category->id)}}" class="btn btn-warning mr-3">Edit</a>
@@ -44,6 +47,8 @@
                 </tbody>
             </tr>
            @endforeach
+           {{ $categories->appends(request()->query())->links()}}
+
         </table>
     </div>
    </div>
