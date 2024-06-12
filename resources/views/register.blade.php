@@ -27,7 +27,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter Email">
 						<input type="email" class="input100  @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email">
-						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+						<span class="focus-input100" data-placeholder="&#xe822;"></span>
                         @error ('email')
                             <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -36,7 +36,7 @@
 
                     <div class="wrap-input100 validate-input" data-validate = "Enter Address">
                         <textarea  class="input100  @error('address') is-invalid @enderror" name="address"  placeholder="Address"></textarea>
-						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+						<span class="focus-input100" data-placeholder="&#xe800;"></span>
                         @error ('address')
                             <div class="invalid-feedback">{{$message}}</div>
                         @enderror
