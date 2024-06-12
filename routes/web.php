@@ -48,6 +48,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
        Route::get('list',[OrderController::class,'orderlist'])->name('order#listpage');
        Route::get('orderdetail/{code}',[OrderController::class,'orderdetail'])->name('order#detail');
 
+       Route::get('contact',[AdminController::class,'contact'])->name('admin#contact');
 
 
        Route::prefix('ajax')->group(function(){
@@ -95,18 +96,20 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
 
 
     // ajax
-    Route::prefix('ajax')->group(function(){
-        Route::get('product',[AjaxController::class,'productdata'])->name('Ajax#product');
-        Route::post('cart',[AjaxController::class,'cart'])->name('Ajax#cart');
-        Route::post('order',[AjaxController::class,'order'])->name('Ajax#order');
-        Route::post('removecart',[AjaxController::class,'removecart'])->name('Ajax#removecart');
+        Route::prefix('ajax')->group(function(){
+            Route::get('product',[AjaxController::class,'productdata'])->name('Ajax#product');
+            Route::post('cart',[AjaxController::class,'cart'])->name('Ajax#cart');
+            Route::post('order',[AjaxController::class,'order'])->name('Ajax#order');
+            Route::post('removecart',[AjaxController::class,'removecart'])->name('Ajax#removecart');
+        });
     });
-});
-Route::get('user/dashboard',[UserController::class,'index'])->name('user.dashboard');
-Route::get('user/contactpage',[ContactController::class,'index'])->name('user.contactpage');
-Route::get('user/aboutus',function(){
-    return view('user.aboutus');
-})->name('user.aboutus');
+        Route::get('user/dashboard',[UserController::class,'index'])->name('user.dashboard');
+        Route::get('user/contactpage',[ContactController::class,'index'])->name('user.contactpage');
+        Route::post('contactcreate',[ContactController::class,'contactcreate'])->name('user.contactcreate');
+
+        Route::get('user/aboutus',function(){
+            return view('user.aboutus');
+        })->name('user.aboutus');
 
 
-Route::get('ajax/filter',[AjaxController::class,'filter']);
+        Route::get('ajax/filter',[AjaxController::class,'filter']);

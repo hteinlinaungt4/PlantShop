@@ -39,7 +39,7 @@
                                 <div class="col-lg-6 mb-5 offset-3">
                                     <div class="contact-form bg-light p-30">
                                         <form  novalidate="novalidate" method="POST"
-                                            action="">
+                                            action="{{route('user.contactcreate')}}">
                                             @csrf
                                             <div class="control-group mb-3">
                                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Your Name"

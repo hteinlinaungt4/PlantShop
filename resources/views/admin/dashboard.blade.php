@@ -83,6 +83,13 @@
                  </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin#contact') }}">
+                    <i class="fa fa-envelope"></i>
+                    <span>Contants</span>
+                 </a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

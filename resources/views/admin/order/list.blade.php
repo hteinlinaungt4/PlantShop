@@ -1,7 +1,5 @@
 @extends('admin.dashboard')
 @section('title',"Order List")
-@section('count')
-@endsection
 @section('content')
     <!-- MAIN CONTENT-->
     <div class="main-content">

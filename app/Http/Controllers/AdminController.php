@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Order;
+use App\Models\Contact;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -103,6 +104,11 @@ function delete($id){
     }
     User::where('id',$id)->delete();
     return back();
+}
+
+function contact(){
+    $contacts=Contact::get();
+    return view('admin.contact.contact',compact('contacts'));
 }
 
 
