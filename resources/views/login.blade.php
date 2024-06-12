@@ -1,36 +1,42 @@
 @extends('master.layout')
 @section('title',"Register")
 @section('content')
-    <div class="d-flex  justify-content-center align-items-center " style="height:100vh">
-        <div class="card w-25">
-           <div class="card-header">
-            <div class="card-title">
-                <h3 class=" text-center">Login Form</h3>
-            </div>
-           </div>
-            <div class="card-body">
-               <form action="{{route('login')}}" method="post">
-                @csrf
+    <div class="limiter">
+		<div class="container-login100" style="background-image: url('{{asset('user/img/bg-img/1.jpg')}}');">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Account Login
+				</span>
+                <form action="{{route('login')}}" class="login100-form validate-form p-b-33 p-t-5" method="post">
+                    @csrf
+					<div class="wrap-input100 validate-input" data-validate = "Enter Email">
+						<input  class="input100  @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        @error ('email')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
+					</div>
 
-                <div class="form-group mb-3">
-                    <label for="">Email</label>
-                    <input type="text" name="email" class="form-control @error('email') is-invalid @enderror">
-                    @error ('email')
-                        <div class="invalid-feedback">{{$message}}</div>
-                    @enderror
-                </div>
+                    <div class="wrap-input100 validate-input" data-validate = "Enter Password">
+						<input type="password" class="input100  @error('password') is-invalid @enderror" type="password" name="password" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                        @error ('password')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
+					</div>
 
-                <div class="form-group mb-3">
-                    <label for="">Password</label>
-                    <input type="text" name="password" class="form-control @error('password') is-invalid @enderror">
-                    @error ('password')
-                        <div class="invalid-feedback">{{$message}}</div>
-                    @enderror
-                </div>
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
 
-                <button class="btn btn-primary float-end">Login</button>
-               </form>
-            </div>
-        </div>
-    </div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
 @endsection
